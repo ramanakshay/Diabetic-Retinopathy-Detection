@@ -48,7 +48,11 @@ A new csv file is created for the augmented dataset which maps each image to a D
 
 I train two kinds of neural networks in this project. The first is a standard Convolution Neural Network (CNN) consisting of basic convolution and pooling layers. The second is the InceptionV3 model developed by Google. The architectures for both the models are included in the neural_nets folder.
 
-## Training using Google Colab
+## Training
+
+The data is split into two parts. 80% of the data is used for training and the remaining 20% is used for validation. The training data is the data used to train the model and the validation data is used to tune the model’s hyper parameters (optimizer, learning rate, batch size, epoch size...). We perform transfer learning on the InceptionV3 model by using a pre-trained network trained on the ImageNet database. 
+
+## Using Google Colab
 
 <p align = "center">
 <img align="center" src="images/colab_upload.png" alt="Upload"/>
@@ -58,14 +62,16 @@ To train the model using Google Colab, first import the neural network architect
 
 `!unzip '/content/drive/MyDrive/filepath/filename.zip'`
 
-The program directly accesses images from the directory to train the model without converting the entire dataset to numpy format (which consumes a lot of memory).
+The program directly accesses images from the directory to train the model without converting the entire dataset to numpy format (which consumes a lot of space ~20GB).
 
 ## Results
 
 The current models return the following scores for binary classification (DR vs No DR) on the dataset.
 | Model | Accuracy |
 | :-----: | :-----: |
-| Standard CNN | 81% |
-| InceptionV3 | 86% |
+| Standard CNN (Training) | 82.2% |
+| Standard CNN (Validation) | 82.2% |
+| InceptionV3 (Training) | 86.0% |
+| InceptionV3 (Validation) | 85.8% |
 
 

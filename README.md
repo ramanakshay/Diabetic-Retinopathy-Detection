@@ -42,7 +42,7 @@ After rotations and mirroring, the class imbalance is rectified, with a few thou
 
 A new csv file is created for the augmented dataset which maps each image to a DR level. 
 
-****The code was borrowed from Grew Chase's [EyeNet](https://github.com/gregwchase/eyenet).***
+****pre-processing code taken from Grew Chase's [EyeNet](https://github.com/gregwchase/eyenet).***
 
 ## Neural Network Architecture
 
@@ -50,7 +50,7 @@ I train two kinds of neural networks in this project. The first is a standard Co
 
 ## Training
 
-The data is split into two parts. 80% of the data is used for training and the remaining 20% is used for validation. The training data is the data used to train the model and the validation data is used to tune the model’s hyper parameters (optimizer, learning rate, batch size, epoch size...). We perform transfer learning on the InceptionV3 model by using a pre-trained network trained on the ImageNet database. 
+The data is split into two parts. 80% of the data is used for training and the remaining 20% is used for validation. The training data is the data used to train the model and the validation data is used to tune the model’s hyper parameters (optimizer, learning rate, batch size, epoch size...). We perform transfer learning on the InceptionV3 model by using a pre-trained network trained on the ImageNet dataset. 
 
 ## Using Google Colab
 

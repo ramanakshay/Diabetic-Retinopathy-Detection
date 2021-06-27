@@ -8,6 +8,10 @@ Diabetic Retinopathy (DR) is a common complication of diabetes mellitus, which c
 
 The dataset is obtained from a [2015 Kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection). The original training data consists of about 35000 images taken of different people, using different cameras, and of different sizes. The dataset is heavily biased as most of the images are classified as not having DR. Pertaining to the preprocessing section, this data is also very noisy, and requires multiple preprocessing steps to get all images to a useable format for training a model.
 
+<p align = "center">
+<img align="center" src="images/original_dataset.png" alt="Original Dataset"/>
+</p>
+
 ## Preprocessing*
 
 The preprocessing pipeline consists of the following:
@@ -24,17 +28,13 @@ All images were scaled down to 256 by 256. Additionally, some images were droppe
 All images were rotated and mirrored.Images without retinopathy were mirrored; images that had retinopathy were mirrored, and rotated 90, 120, 180, and 270 degrees.
 
 <p align = "center">
-<img align="center" src="images/original_dataset.jpg" alt="Original Dataset" width="650" height="500"/>
-</p>
-
-<p align = "center">
-<img align="center" src="images/augmented_dataset.png" alt="Augmented Dataset" width="940" height="500"/>
+<img align="center" src="images/augmented_dataset.png" alt="Augmented Dataset"/>
 </p>
 
 After rotations and mirroring, the class imbalance is rectified, with a few thousand more images having retinopathy.
 
 <p align = "center">
-<img align="center" src="images/augmentation_example.png" alt="Augmented Example" width="950" height="500"/>
+<img align="center" src="images/augmentation_example.png" alt="Augmented Example"/>
 </p>
 
 
@@ -61,18 +61,6 @@ To train the model using Google Colab, first import the neural network architect
 The program directly accesses images from the directory to train the model without converting the entire dataset to numpy format (which consumes a lot of memory).
 
 ## Results
-
-<p align = "center">
-<img align="center" src="images/standard_cnn_results.png" alt="Standard CNN Results" width="650" height="500"/>
-</p>
-
-<p align = "center">
-<img align="center" src="images/inception_stage1.png" alt="Inception Stage 1"/>
-</p>
-
-<p align = "center">
-<img align="center" src="images/inception_stage2.png" alt="Inception Stage 2"/>
-</p>
 
 The current models return the following scores for binary classification (DR vs No DR) on the dataset.
 | Model | Accuracy |
